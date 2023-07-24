@@ -44,7 +44,7 @@ sapply(modelfolders,dir.create)
 ###################### Import area data #######################
 ###############################################################
 #Load ICES rectangles and subdivisions.
-squares<-read.table("../datafiles/ICES_RECT.csv",header=T,sep=";")
+squares<-read.table("ICES_RECT.csv",header=T,sep=";")
 squares<-squares[,c("SD","ICES_Rectangle","Area")]
 tmp<-aggregate(squares$Area,list("rect"=squares$ICES_Rectangle),sum)
 squares<-squares[order(squares[,"ICES_Rectangle"],squares[,"Area"],decreasing=T),]
@@ -535,7 +535,8 @@ ven_migration<-list(
 ################### Import empirical data #####################
 ###############################################################
 
-source("gadget3-vendace-data-v4.R")
+#source("gadget3-vendace-data-v4.R")
+source("model_empiricaldata.RData")
 
 ###############################################################
 ########################### Fleets ############################
